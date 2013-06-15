@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS3 TRANSITIONS</title>
+
+		<meta name="description" content="Uma introdução a CSS3 transitions">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<link rel="stylesheet" href="css/custom/custom.min.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<span id="quentavalo"><!-- --></span>
+			<div class="slides">
+				<section>
+					<div class="galaxy">
+						<span class="star small" style="top:10%; left:10%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:0%; left:70%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:85%; left:70%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:75%; left:40%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:90%; left:5%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:60%; left:20%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:90%; left:90%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:65%; left:50%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:85%; left:30%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:85%; left:60%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:10%; left:95%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:40%; left:80%;">
+							<span class="mass"></span>
+						</span>
+					</div>
+					<h1 class="tatatatatatataaaa">CSS3 TRANSITIONS</h1>
+					<p>
+						<small>Por <a href="http://davireinke.com/">Davi Reinke</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>What the fuck???</h2>
+				</section>
+
+				<section>
+					<section data-state="blackout">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png">
+						<blockquote cite="http://pt.wikipedia.org/wiki/CSS3">
+							“CSS3 é a mais nova versão das famosas Cascading Style Sheets [...]”
+						</blockquote>
+					</section>
+
+					<section data-state="blackout">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png">
+						<blockquote cite="http://pt.wikipedia.org/wiki/CSS3">
+							“A principal função do CSS3 é abolir as imagens de plano de fundo, bordas arredondadas, apresentar transições e efeitos para criar animações de vários tipos, como um simples relógio de ponteiros.”
+						</blockquote>
+					</section>
+
+					<section data-state="blackout">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png">
+						<blockquote class="abstract" cite="http://pt.wikipedia.org/wiki/CSS3">
+							“A <strong>principal função</strong> do CSS3 é <strong>abolir</strong> as imagens de <strong>plano de fundo, bordas arredondadas, apresentar transições</strong> e <strong>efeitos</strong> para criar animações de vários <strong>tipo</strong>s, como um simples <strong>relógio de ponteiros</strong>.”
+						</blockquote>
+					</section>
+				</section>
+
+				<section>
+					<!-- Get time from server -->
+					<!-- ?h=-6 for UTC-6 time -->
+					<link href="http://denisx.ru/myclockcss/keyframes_dial.php?h=-3" rel="stylesheet" />
+
+					<div class="myClockJS">
+					  <div class="inner dial">
+					    <b class="shadow shadow-out"></b>
+					    <b class="shadow shadow-in"></b>
+					    <div class="seg"><b><b><b><b></b></b><b><b></b></b></b><b><b><b></b></b><b><b></b></b></b><b><b><b></b></b><b><b></b></b></b></b><b><b><b><b></b></b><b><b></b></b></b> <b><b><b></b></b><b><b></b></b></b><b><b><b></b></b><b><b></b></b></b></b></div>
+					    <b class="arr"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></b>
+					  </div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Só relógio???</h2>
+				</section>
+
+				<section data-state="blackout">
+					<section>
+						<blockquote cite="http://blog.alexmaccaw.com/css-transitions">
+							"CSS3 transitions traz animações simples e elegantes para aplicações web, mas há muito mais na especificação do que parece à primeira vista."
+						</blockquote>
+						<a href="http://blog.alexmaccaw.com/css-transitions" target="_blank">
+							<small>"All you need to know about CSS Transitions",<br>ALEX MACCAW</small>
+						</a>
+					</section>
+					<section>
+						<blockquote class="abstract" cite="http://blog.alexmaccaw.com/css-transitions">
+							"<strong>CSS3 transitions</strong> traz <strong>animações simples e elegantes</strong> para aplicações web, mas há <strong>muito mais</strong> na especificação do que parece à primeira vista."
+						</blockquote>
+					</section>
+				</section>
+
+				<section data-state="blackout">
+					<section>
+						<blockquote cite="http://blog.alexmaccaw.com/css-transitions">
+							"Deixar o navegador no controle das animações permite otimizar o desempenho e eficiência, alterando o <i>frame rate</i>, minimizando <i>reflows</i> e <i>repaints</i> e colocando um pouco do trabalho na GPU."
+						</blockquote>
+						<a href="http://blog.alexmaccaw.com/css-transitions" target="_blank">
+							<small>"All you need to know about CSS Transitions",<br>ALEX MACCAW</small>
+						</a>
+					</section>
+					<section>
+						<blockquote class="abstract" cite="http://blog.alexmaccaw.com/css-transitions">
+							"Deixar o navegador no controle das animações <strong>permite otimizar o desempenho e eficiência, alterando o <i>frame rate</i>, minimizando <i>reflows/repaints</i> e colocando um pouco do trabalho na GPU.</strong>"
+						</blockquote>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<iframe src="http://s.codepen.io/onediv/fullpage/AsDev" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+					<section>
+						<iframe src="https://developer.cdn.mozilla.net/media/uploads/demos/b/e/bernarddeluna/7ba14851a8beaa16e4e8a519fa760cea/old-radio_1344117102_demo_package/index.html" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+					<section>
+						<a href="http://tympanus.net/Development/CreativeButtons/" target="_blank">Buttons</a>
+						<span class="break"><!-- --></span>
+						<a href="http://shinyDemos.com/beach/" target="_blank">Beach</a>
+						<span class="break"><!-- --></span>
+						<a href="http://shinyDemos.com/hipster-dog/" target="_blank">Hipster Dog</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>but...</h2>
+				</section>
+
+				<section>
+					<section class="reset">
+						<h2>Welcome to reality!</h2>
+						<h2><span style="color:red;">CSS LOL</span></h2>
+						<img src="http://www.galofrito.com.br/wp-content/uploads/2012/10/5485011.jpg">
+					</section>
+					<section>
+						<img src="img/sites/potenza.jpg" height="600" width="800">
+					</section>
+					<section>
+						<img src="img/sites/detetives.jpg" height="600" width="800">
+					</section>
+					<section>
+						<img src="img/sites/rola_bosta.jpg" height="600" width="800">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img src="img/sites/google.jpg" height="600" width="800">
+					</section>
+					<section>
+						<img src="img/sites/google_css.jpg" height="600" width="800">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img src="img/sites/facebook.jpg" height="600" width="800">
+					</section>
+					<section>
+						<img src="img/sites/facebook_css.jpg" height="600" width="800">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img src="img/sites/twitter.jpg" height="600" width="800">
+					</section>
+					<section>
+						<img src="img/sites/twitter_css.jpg" height="600" width="800">
+					</section>
+				</section>
+
+				<section>
+					<h2>CSS3 na vida real</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>1° Onde funciona?</h2>
+					</section>
+					<section>
+						<img src="img/support.jpg">
+					</section>
+					<section>
+						<h2>
+							webkit<br>
+							moz<br>
+							ms<br>
+							o
+						</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>2° Onde usar?</h2>
+					</section>
+					<section>
+						<span id="example-btn">
+							Button
+							<span class="loader"><!-- --></span>
+						</span>
+					</section>
+					<section>
+						<iframe src="http://s.codepen.io/pjetr/fullpage/Bmwxh" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+					<section>
+						<iframe src="http://s.codepen.io/thebabydino/fullpage/jfqtv" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+					<section>
+						<iframe src="http://s.codepen.io/akhil/fullpage/aHslc" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+					<section>
+						<iframe src="http://codepen.io/ermand/fullpage/dhBua" frameborder="0" allowtransparency="true" width="1024" height="768"></iframe>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>3° COMO FAZ?</h2>
+					</section>
+					<section>
+						<h3>:pseudo-classes</h3>
+						<pre><code data-trim contenteditable style="font-size: 24px; margin-top: 20px;">
+.element {
+  height: 100px;
+  transition: height 2s linear;
+}
+
+.element:hover {
+  height: 200px;
+}
+						</code></pre>
+						<a href="http://jsfiddle.net/maccman/Vvscq/" target="_blank">Demo</a>
+					</section>
+					<section>
+						<h3>.class</h3>
+						<pre><code data-trim contenteditable style="font-size: 24px; margin-top: 20px;">
+/* CSS */
+.element {
+  opacity: 0.0;
+  transform: scale(0.95) translate3d(0,100%,0);
+  transition: transform 400ms ease, opacity 400ms ease;
+}
+
+.element.active {
+  opacity: 1.0;
+  transform: scale(1.0) translate3d(0,0,0);
+}
+
+.element.inactive {
+  opacity: 0.0;
+  transform: scale(1) translate3d(0,0,0);
+}
+						</code></pre>
+						<pre><code data-trim contenteditable style="font-size: 24px; margin-top: 20px;">
+/* JS with jQuery */
+var active = function(){
+  $('.element').removeClass('inactive').addClass('active');
+};
+
+var inactive = function(){
+  $('.element').removeClass('active').addClass('inactive');
+};
+						</code></pre>
+						<a href="http://jsfiddle.net/maccman/E9cnL/" target="_blank">Demo</a>
+					</section>
+
+					<section>
+						<h3>...</h3>
+						<a href="http://codepen.io/davireinke/pen/ikrJf" target="_blank">Simple example of CSS transition</a>
+						<span class="break"><!-- --></span>
+						<a href="http://codepen.io/davireinke/pen/Dfwas" target="_blank">CSS Loaders</a>
+						<span class="break"><!-- --></span>
+						<a href="http://codepen.io/davireinke/pen/rakBF" target="_blank">CSS Roulette</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Funções de Timing</h2>
+					</section>
+
+					<section>
+						<h3>Default</h3>
+						<ul>
+							<li>linear</li>
+							<li>ease</li>
+							<li>ease-in</li>
+							<li>ease-out</li>
+							<li>ease-in-out</li>
+						</ul>
+						<a href="http://easings.net/" target="_blank">Demo</a>
+					</section>
+
+					<section>
+						<h3>cubic-bezier</h3>
+						<pre><code data-trim contenteditable style="font-size: 24px; margin-top: 20px;">
+transition: all 1s cubic‑bezier(0.250, 0.250, 0.750, 0.750);
+						</code></pre>
+						<a href="http://matthewlein.com/ceaser/" target="_blank">Demo</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mas e a tal da GPU?</h2>
+					</section>
+					<section>
+						<h3>Top & Left (CPU)</h3>
+						<div class="example-box tl">
+							<span class="box"><!-- --></box>
+						</div>
+					</section>
+
+					<section>
+						<h3>Translate 3D (GPU)</h3>
+						<div class="example-box t3d">
+							<span class="box"><!-- --></box>
+						</div>
+					</section>
+
+					<section>
+						<h3>Width & Height (CPU)</h3>
+						<div class="example-box wh">
+							<span class="box"><!-- --></box>
+						</div>
+					</section>
+
+					<section>
+						<h3>Scale (GPU)</h3>
+						<div class="example-box scl">
+							<span class="box"><!-- --></box>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h2>DÚVIDAS?</h2>
+				</section>
+
+				<section>
+					<h2>OBRIGADO!!!</h2>
+					<span class="quentavalo"><!-- --></span>
+				</section>
+
+				<section>
+					<div class="galaxy">
+						<span class="star small" style="top:10%; left:10%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:0%; left:70%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:85%; left:70%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:75%; left:40%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:90%; left:5%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:60%; left:20%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:90%; left:90%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:65%; left:50%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star small" style="top:85%; left:30%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:85%; left:60%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:10%; left:95%;">
+							<span class="mass"></span>
+						</span>
+						<span class="star" style="top:40%; left:80%;">
+							<span class="mass"></span>
+						</span>
+					</div>
+					<h1 class="tatatatatatataaaa">CSS3 TRANSITIONS</h1>
+					<p>
+						<small>Por <a href="http://davireinke.com/">Davi Reinke</a></small>
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+
+			function pulaQuentavalo() {
+				var quental = document.getElementById('quentavalo');
+				quental.setAttribute('class','pula');
+
+				setTimeout(function() {
+					quental.setAttribute('class','');
+
+					setTimeout(pulaQuentavalo, (Math.random()*540000)+60000);
+				}, 3000);
+			}
+			pulaQuentavalo();
+
+		</script>
+
+	</body>
+</html>
